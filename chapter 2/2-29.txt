@@ -1,0 +1,15 @@
+> (define a (make-mobile (make-branch 2 3) (make-branch 2 3)))
+> (define b (make-mobile (make-branch 2 3) (make-branch 4 5)))
+> (define c (make-mobile (make-branch 5 a) (make-branch 3 b)))
+> (total-weight a)
+6
+> (total-weight b)
+8
+> (mobile-balanced? a) 
+#t
+> (mobile-balanced? b)
+#f
+> (total-weight c)
+14
+> (mobile-balanced? c)
+#f

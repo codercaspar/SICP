@@ -1,0 +1,38 @@
+(and 
+    (job ?x ?j) 
+    (supervisor ?x (Bitdiddle Ben))
+    (salary ?x 25000))
+;;; Query results:
+(and (job (Tweakit Lem E) (computer technician)) (supervisor (Tweakit Lem E) (Bitdiddle Ben)) (salary (Tweakit Lem E) 25000))
+
+但这种修改会有问题
+http://eli.thegreenplace.net/2008/02/09/sicp-sections-442-444/给出了一个例子
+
+(and 
+    (job ?x ?j) 
+    (not (supervisor ?x (Bitdiddle Ben))))
+就不会有什么输出，但本应该是有输出的
+原因如下
+因为不是依次执行，(job ?x ?j)和(not (supervisor ?x (Bitdiddle Ben)))同时进行
+(not (supervisor ?x (Bitdiddle Ben)))铁定返回stream-null
+然后和(job ?x ?j)混合后就返回stream-null
+(define (merge-two-frame-stream s1 s2)
+    (stream-flatmap
+	    (lambda (f1)
+		    (stream-filter 
+			    (lambda (v) (not (equal? v 'failed)))
+				(stream-map
+				    (lambda (f2)
+					    (merge-two-frame f1 f2))
+						s2)))
+		s1))
+		
+s1不空，但s2空，所以返回空
+
+还有一个反例，就是之前的rule son
+(rule (son ?m ?s)
+          (and
+            (wife ?m ?w)
+            (son ?w ?s)))
+			
+因为同时解析就会无限循环了

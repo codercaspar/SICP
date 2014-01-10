@@ -1,0 +1,17 @@
+没什么问题，要说不同的地方
+前者是每次seq一把，都要有一个新的运行环境来存储p，在执行的时候再开一个空间来容纳arg
+类似于这种 
+p1 -> arg1
+p2 -> arg2
+p3 -> arg3
+p1很可能和p2，p3是一个函数
+
+后者就是这种
+withdraw ->
+			arg1
+			arg2
+			arg3
+deposit ->
+			arg1
+			arg2
+			arg3

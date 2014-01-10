@@ -1,0 +1,11 @@
+(stream-ref cosine-series 2)
+-1/2
+(stream-ref cosine-series 3)
+0
+(stream-ref cosine-series 4)
+1/24
+
+(stream-ref sine-series 3)
+0
+(stream-ref sine-series 4)
+-1/6

@@ -1,0 +1,17 @@
+(define (my-cons a b)
+	(* 	(expt 2 a)
+		(expt 3 b)))
+		
+(define (my-car z)
+	(define (iter product time)
+		(if (= 0 (remainder z product))
+			(iter (* product 2) (+ time 1))
+			time))
+	(iter 2 0))
+	
+(define (my-cdr z)
+	(define (iter product time)
+		(if (= 0 (remainder z product))
+			(iter (* product 3) (+ time 1))
+			time))
+	(iter 3 0))

@@ -1,0 +1,31 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+(3 20)
+
+;;; Amb-Eval input:
+try-again
+
+
+;;; Amb-Eval value:
+(3 110)
+
+;;; Amb-Eval input:
+try-again
+
+
+;;; Amb-Eval value:
+(8 35)
+
+;;; Amb-Eval input:
+try-again
+
+
+;;; There are no more values of
+(prime-sum-pair '(1 3 5 8) '(20 35 110))
+
+;;; Amb-Eval input:
+(prime-sum-pair '(19 27 30) '(11 36 58))
+
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+(30 11)

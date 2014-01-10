@@ -1,0 +1,6 @@
+(define (f n) 
+    (f-iter 2 1 0 (- n 3)))
+(define (f-iter x y z count)
+    (if (= count 0)
+        (+ x (* 2 y) (* 3 z))
+        (f-iter (+ x (* 2 y) (* 3 z)) x y (- count 1))))

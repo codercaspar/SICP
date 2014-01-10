@@ -1,0 +1,7 @@
+> (adjoin-set 1 (list 2 3 4 5))
+(1 2 3 4 5)
+> (adjoin-set 3 (list 1 2 4 5))
+(1 2 3 4 5)
+> (adjoin-set 6 (list 1 2 4 5))
+(1 2 4 5 6)
+> 

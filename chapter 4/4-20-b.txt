@@ -1,0 +1,4 @@
+用letrec，内部变量之间递归调用，木有问题，因为大家在同一个变量空间中
+但换成let，就会有问题
+因为let的实质是((lambda (vars) balabala) (eval vals))
+(eval vals)的话是依次求值，所以，各个producre执行的空间都不一样了，无法做到递归调用了

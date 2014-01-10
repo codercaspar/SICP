@@ -1,0 +1,13 @@
+和4.63一样，问题就是出现在首先outranked-by直接首先递归调用自己了
+流程是这样的
+(outranked-by ?staff-person ?boss) ->
+(outranked-by ?middle-manager ?boss)
+把?middle-manager赋值成为?staff-person后继续再调用自己
+无限循环下去了
+
+(and 
+    (supervisor ?staff-person
+        ?middle-manager)
+	(outranked-by ?middle-manager ?boss))
+	
+这样就ok了，因为这样就相当于递归有了停止条件，不会无限循环

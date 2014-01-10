@@ -1,0 +1,7 @@
+> (define primes '(2 3 5 7))
+> (define twos '(2 2 2))
+> (intersection-set primes twos)
+(2)
+> (intersection-set twos primes)
+(2 2 2)
+> 

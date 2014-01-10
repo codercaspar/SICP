@@ -1,0 +1,3 @@
+将distinct放到最后，可以提高速度。distinct想比较而言，比较耗时。比较而言，原算法中distinct一次不拉的全执行了。新算法在最后才运行distinct，省了4×5^4次distinct的运算
+
+但次序对结果不会有影响

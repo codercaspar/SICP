@@ -1,0 +1,14 @@
+(define integers
+	(cons-stream 1 (add-streams ones integers)))
+	
+(stream-car) 1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(stream-cdr) 执行(add-streams ones integers)
+返回值是 (cons-stream 2 (stream-map +  (stream-cdr ones) (stream-cdr integers)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(stream-cdr) 执行(stream-map +  (stream-cdr ones) (stream-cdr integers))
+执行过程
+(stream-car (stream-cdr ones)) = 1
+(stream-cdr integers) = (add-streams ones integers) = (cons-stream 2 (stream-map +  (stream-cdr ones) (stream-cdr integers)))
+(stream-car (stream-cdr integers)) = 2
+返回值是(cons-stream 3 (stream-map +  (stream-cdr ones) (stream-map +  (stream-cdr ones) (add-streams ones integers))))

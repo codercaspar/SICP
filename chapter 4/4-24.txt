@@ -1,0 +1,38 @@
+预先分析和直接解释相比，预先分析先分析完了以后，每次执行的时候就执行分析后的结果
+具体来说就是在针对递归上有很好的效果
+比如递归程序，分析完了后，执行就直奔主题，没有任何多余的分支了
+
+但直接解释则不行，递归起来，还要分析是不是基本元素，是不是变量，是不是if等等等等，浪费了时间，
+所以还是预先分析后再执行更高效
+
+但我没找到r5s5的计算程序运行时间的函数，所以就拷贝了别人的测试结果来了，意思是一样的
+
+(interpret 
+  '(define (factorial n)
+    (if (= n 1)
+      1
+      (* (factorial (- n 1)) n))))
+
+(time 
+  (dotimes (i 1000 t)
+    (interpret 
+    '(factorial 50))))
+=>
+Real time: 32.875 sec.
+Run time: 32.078125 sec.
+
+
+
+(interpret 
+  '(define (factorial2 n)
+    (if (= n 1)
+      1
+      (* (factorial2 (- n 1)) n))))
+
+(time 
+  (dotimes (i 1000 t)
+    (interpret 
+      '(factorial2 50))))
+=>
+Real time: 24.078125 sec.
+Run time: 23.8125 sec.

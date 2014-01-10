@@ -1,0 +1,39 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+(a b 1)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(a c 1)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(b a 1)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(b c 1)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(c a 1)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(c b 1)
+
+;;; Amb-Eval input:
+try-again
+
+;;; There are no more values of
+(let ((x (amb 'a 'b 'c)) (y (amb 'a 'b 'c))) (set! count (+ count 1)) (require (not (eq? x y))) (list x y count))

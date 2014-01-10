@@ -1,0 +1,5 @@
+> (center (make-center-percent 10 0.1))
+10.0
+> (rate (make-center-percent 10 0.1))
+0.1
+> 

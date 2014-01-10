@@ -1,0 +1,7 @@
+(polynomial (x ((2 1) (0 1))))
+(polynomial (y ((2 1) (0 (polynomial (x ((0 1))))))))
+(polynomial (z ((2 1) (0 (polynomial (x ((0 1))))))))
+(polynomial (y ((2 (polynomial (x ((2 1))))) (1 1) (0 0))))
+(polynomial (z ((2 (polynomial (x ((2 1))))) (1 1) (0 0))))
+(polynomial (z ((1 1) (0 (polynomial (x ((2 (polynomial (y ((2 1))))) (0 0))))))))
+(polynomial (z ((1 1) (0 (polynomial (y ((2 (polynomial (x ((2 1))))) (1 (polynomial (x ((2 1))))))))))))

@@ -1,0 +1,7 @@
+> (define a (make-point 0 2))
+> (define r (make-rect a  2 1))
+> (display (rect-perimeter r))
+6
+> (display (rect-area r))
+2
+> 

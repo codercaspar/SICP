@@ -1,0 +1,34 @@
+;;; M-Eval input:
+(define a 3)
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+a
+
+;;; M-Eval value:
+3
+
+;;; M-Eval input:
+(set! a 2)
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+a
+
+;;; M-Eval value:
+2
+
+;;; M-Eval input:
+(unbound! a)
+
+;;; M-Eval value:
+#<void>
+
+;;; M-Eval input:
+a
+
+"Unbound variable"

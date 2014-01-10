@@ -1,0 +1,6 @@
+如果把map作为primitive函数，那么map就在实现解释器的语言环境中运行
+以本题为例，map就在lisp环境中解释用户输入
+那么输入的arg必须是lisp环境能认识的
+但通过my-eval解释后，输入变成我们自定义的结构，比如lambda变成了
+(make-procedure (lambda-parameters exp) (lambda-body exp) env)
+这个lisp环境是不认识的，所以失败

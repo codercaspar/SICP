@@ -1,0 +1,3 @@
+a先读取mutex，为false，可以使用，然后再给mutex赋值true之前，被process b抢占走了
+b去读mutex，为false，可以使用，然后赋值，赋值后再被a抢占回去，a赋值，
+然后a和b就都认为自己获得了mutex，都在并发操作共享数据，很容易出问题

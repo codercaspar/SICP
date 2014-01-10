@@ -1,0 +1,19 @@
+ok
+#<procedure:me>
+#<procedure:me>
+#<procedure:me>
+
+Probe: a = 10done
+
+Probe: b = 20
+Probe: c = 15done
+
+ok
+#<procedure:me>
+#<procedure:me>
+#<procedure:me>
+
+Probe: a = 10done
+
+Probe: c = 20
+Probe: b = 30done

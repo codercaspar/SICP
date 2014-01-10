@@ -1,0 +1,20 @@
+(assert! (meeting accounting (Monday 9am)))
+(assert! (meeting administration (Monday 10am)))
+(aseert! (meeting computer (Wednesday 3pm)))
+(assert! (meeting administration (Friday 1pm)))
+(assert! (meeting whole-company (Wednesday 4pm)))
+
+(meeting ?x (Friday . ?y))
+;;; Query results:
+(meeting administration (Friday 1pm))
+
+(assert! 
+    (rule (meeting-time ?person ?day-and-time)
+	    (or (meeting whole-company ?day-and-time)
+			(and (meeting ?divsion ?day-and-time)
+				 (job ?person (?divsion . ?x))))))
+				 
+(meeting-time (Hacker Alyssa P) ?time)
+;;; Query results:
+(meeting-time (Hacker Alyssa P) (Wednesday 4pm))
+

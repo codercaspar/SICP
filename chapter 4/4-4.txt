@@ -1,0 +1,13 @@
+(and (eq? 1 1) true)
+#t
+;;; M-Eval input:
+(or false true)
+
+;;; M-Eval value:
+#t
+
+;;; M-Eval input:
+(or (eq? 1 2) false)
+
+;;; M-Eval value:
+#f

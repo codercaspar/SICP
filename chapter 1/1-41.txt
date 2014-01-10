@@ -1,0 +1,6 @@
+> (((double (double double)) inc) 5)
+21
+
+(double double) = 2^2 = 4
+
+((double (double double)) = (2^2)^2 = 16

@@ -1,0 +1,53 @@
+(assert! (dummy a))
+(assert! (dummy b))
+(assert! (dummy c))
+(assert! (rule (dummy ?x) (dummy ?x)))
+
+(dummy ?who)
+;;; Query results:
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+(dummy c)
+(dummy b)
+(dummy a)
+......
+
+因为使用了delay，
+所以就打印出来了
+流程是这样的
+首先是使用assert的dummy
+把
+(assert! (dummy a))
+(assert! (dummy b))
+(assert! (dummy c))
+逆序打印出来后开始处理rule
+解析rule的dummy后还是首先assert，然后rule被delay
+一直循环下去

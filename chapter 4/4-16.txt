@@ -1,0 +1,16 @@
+;;; M-Eval input:
+(define (test n)
+	(define a 1)
+	(define b 2)
+	(+ a b n))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(test 3)
+
+;;; M-Eval value:
+6
+
+;;; M-Eval input:

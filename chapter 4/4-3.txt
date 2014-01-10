@@ -1,0 +1,5 @@
+(+ (car (list 1 'a)) 2)
+3
+(define (my-fun a) (+ a a))
+(my-fun 2)
+4

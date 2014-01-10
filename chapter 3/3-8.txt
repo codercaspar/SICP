@@ -1,0 +1,20 @@
+(define f
+  (let ((state 1))
+    (lambda (n)
+      (set! state (* state n))
+      state)))
+
+(+ (f 1) (f 0))
+
+1
+
+
+(define f
+  (let ((state 1))
+    (lambda (n)
+      (set! state (* state n))
+      state)))
+
+(+ (f 0) (f 1))
+
+0

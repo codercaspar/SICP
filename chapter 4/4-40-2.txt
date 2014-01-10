@@ -1,0 +1,20 @@
+;;; Amb-Eval input:
+
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+ok
+
+;;; Amb-Eval input:
+
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+((baker 3) (cooper 2) (fletcher 4) (miller 5) (smith 1))
+
+;;; Amb-Eval input:
+try-again
+
+;;; There are no more values of
+(multiple-dwelling)
+
+比之前优化过一次的程序比，这次更快。因为避免了如下无意义的重复：
+比如，(require (> miller cooper))失败后会从smith开始回找，其实和smith无关，带上smith是没意义的。如果把miller和cooper放到最后面，还是会有重复，比如(require (not (= (abs (- smith fletcher)) 1)))失败后，回找后会把之前明明排除过的miller和cooper再来一次，无意义的重复

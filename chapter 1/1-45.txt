@@ -1,0 +1,1 @@
+repeat num = log2(n) (向下取整)

@@ -1,0 +1,7 @@
+1 append operation is O(n)
+
+so 1 cost time nlg(n)
+
+2 iter
+
+so 2 coust time O(n)

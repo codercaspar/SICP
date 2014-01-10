@@ -1,0 +1,11 @@
+50
+50
+
+和之前的版本区别是
+old
+global - E1
+       - E2
+	   
+new
+global - E1 - E11(balance)
+	   - E2 - E22(balance)

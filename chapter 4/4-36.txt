@@ -1,0 +1,87 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+(3 4 5)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(6 8 10)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(5 12 13)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(9 12 15)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(8 15 17)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(12 16 20)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(15 20 25)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(7 24 25)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(10 24 26)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(20 21 29)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(18 24 30)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(16 30 34)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(21 28 35)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(12 35 37)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(15 36 39)

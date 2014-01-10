@@ -1,0 +1,22 @@
+(assert! (rule (same ?x ?x)))
+
+(assert! (rule (can-replace ?a ?b)
+        (and (or (and (job ?a ?job) (job ?b ?job))
+                 (and (job ?a ?j1) 
+                      (job ?b ?j2)
+                      (can-do-job ?j1 ?j2)))
+             (not (same ?a ?b)))))
+
+(can-replace ?t (Fect Cy D))
+;;; Query results:
+(can-replace (Bitdiddle Ben) (Fect Cy D))
+(can-replace (Hacker Alyssa P) (Fect Cy D))
+
+(and 
+    (can-replace ?1 ?2)
+    (salary ?1 ?s1)
+    (salary ?2 ?s2)
+    (lisp-value > ?s2 ?s1))
+;;; Query results:
+(and (can-replace (Aull DeWitt) (Warbucks Oliver)) (salary (Aull DeWitt) 25000) (salary (Warbucks Oliver) 150000) (lisp-value > 150000 25000))
+(and (can-replace (Fect Cy D) (Hacker Alyssa P)) (salary (Fect Cy D) 35000) (salary (Hacker Alyssa P) 40000) (lisp-value > 40000 35000))

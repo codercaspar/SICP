@@ -1,0 +1,65 @@
+(define (make-deque) (cons '() '()))
+
+(define (front-ptr deque) (car deque))
+(define (rear-ptr deque)  (cdr deque))
+
+(define (empty-deque? deque) (null? (front-ptr deque)))
+
+(define (set-front-ptr! deque item) (set-car! deque item))
+(define (set-rear-ptr! deque item)  (set-cdr! deque item))
+
+(define (front-deque deque)
+	(if (empty-deque? deque)
+		(error "FRONT called with an empty queue" deque)
+		(caar (front-ptr deque))))
+(define (rear-deque deque)
+	(if (empty-deque? deque)
+		(error "FRONT called with an empty queue" deque)
+		(caar (rear-ptr deque))))
+				
+(define (rear-insert-deque! deque item)
+    (let ((new-pair (cons (cons item '()) '())))
+		(cond ((empty-deque? deque) 
+				(set-front-ptr! deque new-pair) 
+				(set-rear-ptr!  deque new-pair))
+			  (else
+			    (set-cdr! (car new-pair) (rear-ptr deque))
+				(set-cdr! (rear-ptr deque) new-pair)
+				(set-rear-ptr! deque new-pair)))))
+(define (front-insert-deque! deque item)
+    (let ((new-pair (cons (cons item '()) '())))
+		(cond ((empty-deque? deque) 
+				(set-front-ptr! deque new-pair) 
+				(set-rear-ptr!  deque new-pair))
+			  (else
+			    (set-cdr! (car (front-ptr deque)) new-pair)
+				(set-cdr! new-pair (front-ptr deque))
+				(set-front-ptr! deque new-pair)))))
+				
+(define (front-delete-deque! deque)
+	(cond ((empty-deque? deque)
+			(error "DELETE! called with an empty queue" deque))
+		  (else
+			(set-front-ptr! deque (cdr (front-ptr deque))))))
+(define (rear-delete-deque! deque)
+	(cond ((empty-deque? deque)
+			(error "DELETE! called with an empty queue" deque))
+		  (else
+			(set-rear-ptr! deque (cdar (rear-ptr deque)))
+			(set-cdr! (rear-ptr deque) '()))))
+			
+(define (print-deque deque)
+	(if (empty-deque? deque)
+		'()
+		(map car (front-ptr deque))))
+			
+(define q1 (make-deque))
+(print-deque q1)
+(rear-insert-deque! q1 'a)
+(print-deque q1)
+(front-insert-deque! q1 'b)
+(print-deque q1)
+(rear-delete-deque! q1)
+(print-deque q1)
+(front-delete-deque! q1)
+(print-deque q1)

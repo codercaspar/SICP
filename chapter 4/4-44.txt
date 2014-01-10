@@ -1,0 +1,39 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+ok
+
+;;; Amb-Eval input:
+
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+((one (1 1)) (two (2 5)) (three (3 8)) (four (4 6)) (five (5 3)) (six (6 7)) (seven (7 2)) (eight (8 4)))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+((one (1 1)) (two (2 6)) (three (3 8)) (four (4 3)) (five (5 7)) (six (6 4)) (seven (7 2)) (eight (8 5)))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+((one (1 1)) (two (2 7)) (three (3 4)) (four (4 6)) (five (5 8)) (six (6 2)) (seven (7 5)) (eight (8 3)))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+((one (1 1)) (two (2 7)) (three (3 5)) (four (4 8)) (five (5 2)) (six (6 4)) (seven (7 6)) (eight (8 3)))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+((one (1 2)) (two (2 4)) (three (3 6)) (four (4 8)) (five (5 3)) (six (6 1)) (seven (7 7)) (eight (8 5)))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+((one (1 2)) (two (2 5)) (three (3 7)) (four (4 1)) (five (5 3)) (six (6 8)) (seven (7 6)) (eight (8 4)))

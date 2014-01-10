@@ -1,0 +1,4 @@
+先取反
+再与
+结果再取反
+时延是and_delay + 2 * inverter_delay

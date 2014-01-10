@@ -1,0 +1,31 @@
+;;; M-Eval input:
+(define (fib n) (let fib-iter ((a 1) (b 0) (count n)) (if (= count 0) b (fib-iter (+ a b) a (- count 1)))))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(fib 4)
+
+;;; M-Eval value:
+3
+
+;;; M-Eval input:
+(fib 3)
+
+;;; M-Eval value:
+2
+
+;;; M-Eval input:
+(fib 5)
+
+;;; M-Eval value:
+5
+
+;;; M-Eval input:
+(fib 7)
+
+;;; M-Eval value:
+13
+
+;;; M-Eval input:

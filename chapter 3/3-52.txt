@@ -1,0 +1,45 @@
+6
+10
+136
+
+10
+15
+45
+55
+105
+120
+190
+210
+
+如果没有memory优化
+
+(define sum 0)
+(define (accum x)
+  (set! sum (+ x sum))
+  sum)
+(define seq (stream-map accum (stream-enumerate-interval 1 20)))
+; sum = 1
+; seq = (1 (accum 2) (accum 3) (accum 4) ...)
+(define y (stream-filter even? seq))
+; y = (6 (stream-filter even? ((accum 4) (accum 5) ...)))
+; sum = 6
+(define z (stream-filter (lambda (x) (= (remainder x 5) 0))
+                         seq))
+; the second argument of stream-filter (think it as a local copy of seq)
+;  is (1 8 11 15 (accum 5) ...)
+; z = (15 (stream-filter (lambda (x) (...)) ((accum 5) ...)))
+; sum = 15
+(stream-ref y 7)        
+; y = (6 24 30 54 64 100 114 162 (stream-filter even? ((accum 18) ...)))
+; So it returns 162
+; sum = 162
+(display-stream z)
+; z = (15 (stream-filter (lambda (x) (...))
+;  (162+5=167 167+6=173 173+7=180 180+8=188 188+9=197 197+10=207
+;   207+11=218 218+12=230 230+13=243 243+14=257 257+15=272 272+16=288
+;   288+17=305 305+18=323 323+19=342 342+20=362)
+; 15
+; 180
+; 230
+; 305
+; sum = 362

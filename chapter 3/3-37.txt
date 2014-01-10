@@ -1,0 +1,12 @@
+#<procedure:me>
+#<procedure:me>
+
+Probe: c = 10
+Probe: f = 50done
+
+Probe: c = ?
+Probe: f = ?done
+
+Probe: f = 50
+Probe: c = 10done
+> 

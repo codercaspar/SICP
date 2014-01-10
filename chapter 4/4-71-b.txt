@@ -1,0 +1,5 @@
+反过来，如果不delay的话
+之前的那个输入就会无限循环
+
+例子来源于
+http://eli.thegreenplace.net/2008/02/09/sicp-sections-442-444/

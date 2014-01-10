@@ -1,0 +1,12 @@
+(define (simple-stream-flatmap proc s)
+    (simple-flatten (stream-map proc s)))
+	
+(define (simple-flatten stream)
+    (stream-map
+        (lambda (s) (stream-car s))	
+			(stream-filter 
+				(lambda (s) (not (stream-null? s))) 
+				stream)))
+				
+不会有什么影响
+因为产生的流中流确实是要嘛是个stream-empty，要嘛就是只有一个元素

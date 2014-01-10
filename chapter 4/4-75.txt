@@ -1,0 +1,27 @@
+(assert! 
+    (rule (only-one-boss ?a)
+	     (and (supervisor ?a ?b)
+		      (unique (supervisor ?a ?c)))))
+
+(only-one-boss ?a)
+;;; Query results:
+(only-one-boss (Aull DeWitt))
+(only-one-boss (Cratchet Robert))
+(only-one-boss (Scrooge Eben))
+(only-one-boss (Bitdiddle Ben))
+(only-one-boss (Reasoner Louis))
+(only-one-boss (Tweakit Lem E))
+(only-one-boss (Fect Cy D))
+(only-one-boss (Hacker Alyssa P))
+
+
+(assert! 
+    (rule (only-one-boss ?a)
+	     (and (supervisor ?a ?b)
+		 (unique (supervisor ?c ?b)))))
+		 
+(only-one-boss ?a)
+
+;;; Query results:
+(only-one-boss (Cratchet Robert))
+(only-one-boss (Reasoner Louis))

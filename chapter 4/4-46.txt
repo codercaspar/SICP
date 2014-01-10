@@ -1,0 +1,5 @@
+"parse-word advances the *unparsed* list from left to right, because it knows that the parser works this way. Without being sure of the order, we couldn’t implement parse-word.
+
+I’m not 100% sure of my answer to this exercise. If you have a better one, let me know."
+
+eli bendersky's answer

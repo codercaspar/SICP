@@ -1,0 +1,32 @@
+(define (test f x)
+	(f x))
+
+(define (inc x)
+	(+ x 1))
+
+这段程序会出问题，就是把函数当做参数时，参数都delay了，如果不在apply之前force一下的话
+就会把trunk这个结构传入my-apply，识别不了，然后就错了
+
+;;; M-Eval input:
+(define (inc x)
+	(+ x 1))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(inc 1)
+
+;;; M-Eval value:
+2
+
+;;; M-Eval input:
+(define (test f x)
+	(f x))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(test inc 1)
+error (thunk inc #0=(((test procedure (f x) ((f x)) #0#) (inc procedure (x) ((+ x 1)) #0#) (false . #f) (true . #t) (car primitive #<procedure:mcar>) (cadr primitive #<procedure:mcadr>) (cdr primitive #<procedure:mcdr>) (cons primitive #<procedure:mcons>) (null? primitive #<procedure:null?>) (+ primitive #<procedure:+>) (- primitive #<procedure:->) (* primitive #<procedure:*>) (/ primitive #<procedure:/>) (= primitive #<procedure:=>) (list primitive #<procedure:mlist>) (cons primitive #<procedure:mcons>) (eq? primitive #<procedure:eq?>) (assoc primitive #<procedure:massoc>) (display primitive #<procedure:mdisplay>))))

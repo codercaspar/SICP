@@ -1,0 +1,23 @@
+(define (sum term a next b k)
+	(display a)
+	(newline)
+	(display b)
+	(newline)
+	(display k)
+	(newline)
+	(if (> a b)
+		0
+		(+ (term a k)
+			(sum term (next a) next b (+ k 1)))))
+
+(define (integral f a b n)
+	(define h (/ (- b a) n))
+	(define (add x) (+ x h))
+	(define (term x k)
+		(cond  ((= k 0) (f x))
+			   ((= k n) (f x))
+			   ((even? k) (* 2 (f x)))
+			   (else (* 4 (f x)))))
+	(* (sum term a add b 0) (/ h 3)))
+
+(define (cube x) (* x x x))

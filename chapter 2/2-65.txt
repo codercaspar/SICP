@@ -1,0 +1,9 @@
+> (tree->list-2 (adjoin-set-tree 1 tree7))
+(1 3 5 7 9 11)
+> (tree->list-2 (adjoin-set-tree 8 tree7))
+(1 3 5 7 8 9 11)
+> (tree->list-2 (union-set-tree tree3 tree7))
+(1 3 5 7 9 11)
+> (tree->list-2 (intersection-set-tree tree3 tree7))
+(1 3 5)
+> 

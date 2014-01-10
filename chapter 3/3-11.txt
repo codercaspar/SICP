@@ -1,0 +1,10 @@
+global
+
+acc
+	global - e1 - acc
+	
+acc2
+	global - e2 - acc2
+	
+global 是共享的
+还有就是e1和e2中的代码是共享的

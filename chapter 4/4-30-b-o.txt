@@ -1,0 +1,34 @@
+;;; M-Eval input:
+(define (p1 x)
+	(set! x (cons x '(2)))
+	x)
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(p1 1)
+
+;;; M-Eval value:
+(1 2)
+
+;;; M-Eval input:
+(define (p2 x)
+	(define (p e)
+		e
+		x)
+	(p (set! x (cons x '(2)))))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(p2 1)
+
+;;; M-Eval value:
+1
+
+;;; M-Eval input:
+
+p2之所以有问题，是因为(set! x (cons x '(2)))被当成参数传进去了，然后被延迟执行了
+所以返回的x还是入参1

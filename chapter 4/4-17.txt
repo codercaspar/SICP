@@ -1,0 +1,16 @@
+(lambda vars
+	(define u e1)
+	(define v e2)
+	e3)
+串行和并行的差别就在于
+执行e3时，串行，e3和u，v在一个空间中，vars在他们上层
+并行时是在同一层
+
+如果想做出并行，并且变量都在一个空间中，则改成这样
+
+(lambda vars
+	(define (u '*unassigned*))
+	(define (v '*unassigned*))
+	(set! u e1)
+	(set! v e2)
+	e3)

@@ -1,0 +1,18 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+ok
+
+;;; Amb-Eval input:
+
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+((baker 3) (cooper 2) (fletcher 4) (miller 5) (smith 1))
+
+;;; Amb-Eval input:
+try-again
+
+;;; There are no more values of
+(multiple-dwelling)
+
+会快一些，它避免了以下情况的重复
+比如fletcher为1时的5^4次的无意义的重复

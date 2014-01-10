@@ -1,0 +1,2 @@
+(stream-show V 30)
+(stream-show i 30)

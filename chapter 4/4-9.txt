@@ -1,0 +1,13 @@
+;;; M-Eval input:
+(define a 1)
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(while (= a 1) (display "hello") (set! a 0))
+hello
+;;; M-Eval value:
+#t
+
+;;; M-Eval input

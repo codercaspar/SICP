@@ -1,0 +1,19 @@
+书中的实现
+
+(lambda (env) 
+  ((lambda (env)
+     ((lambda (env) 
+        (proc1 env) 
+        (proc2 env))
+      env)
+     (proc3 env))
+   env)
+  (proc4 env))
+
+题目中的实现
+
+(lambda (env)
+  (execute-sequence (proc1 proc2 proc3 proc3) env))
+
+书中的实现apply时就依次执行
+题目中的实现，在apply时还要有cond判断，效率低一些

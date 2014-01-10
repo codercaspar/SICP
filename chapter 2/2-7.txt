@@ -1,0 +1,24 @@
+﻿(display-interval (add-interval (make-interval 1 2) (make-interval 3 4)))
+[4,6]
+(display-interval (sub-interval (make-interval 1 2) (make-interval 3 4)))
+[-3,-1]
+(display-interval (mul-interval (make-interval 1 2) (make-interval 3 4)))
+[3,8]
+(display-interval (div-interval (make-interval 1 2) (make-interval 3 4)))
+[0.25,0.6666666666666666]
+(display-interval (add-interval (make-interval -1 2) (make-interval -3 4)))
+[-4,6]
+(display-interval (sub-interval (make-interval -1 2) (make-interval -3 4)))
+[-5,5]
+(display-interval (mul-interval (make-interval -1 2) (make-interval -3 4)))
+[-6,8]
+(display-interval (div-interval (make-interval -1 2) (make-interval -3 4)))
+[-0.6666666666666666,0.5] 这个结果不正确，除法则要求被除数必须是同号，否则意味着可以取到0，会有无穷大
+(display-interval (add-interval (make-interval -2 -1) (make-interval -4 -3)))
+[-6,-4]
+(display-interval (sub-interval (make-interval -2 -1) (make-interval -4 -3)))
+[1,3]
+(display-interval (mul-interval (make-interval -2 -1) (make-interval -4 -3)))
+[3,8]
+(display-interval (div-interval (make-interval -2 -1) (make-interval -4 -3)))
+[0.25,0.6666666666666666]

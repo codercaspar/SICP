@@ -1,0 +1,7 @@
+new operations : message-passing
+new data type  : message-passing or data-directed
+
+
+With explicit dispatch, every function will have to be changed when a new type is added. This isn¡¯t very good, of course.
+With data directed style, we¡¯ll have to install another package (like we did with deriv in Exercise 2.74), but from there the upper level calls don¡¯t have to change.
+With message passing, similarly to data directed style, we¡¯ll only have to add another type of ¡°object¡± that accepts the same messages. The upper level calling code doesn¡¯t even have to be aware of the fact a new type has been added.

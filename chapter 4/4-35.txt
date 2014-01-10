@@ -1,0 +1,15 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+(3 4 5)
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+(6 8 10)
+
+;;; Amb-Eval input:
+try-again
+
+;;; There are no more values of
+(a-pythagorean-triple-between 1 10)

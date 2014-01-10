@@ -1,0 +1,14 @@
+(n * (2 * h + or))
+h = (2 * and + i)
+
+
+s1 0 New-value = 0
+s2 0 New-value = 0
+carry 0 New-value = 0done
+
+s1 8 New-value = 1
+s2 8 New-value = 1
+s1 16 New-value = 0
+s2 16 New-value = 0
+s2 32 New-value = 1done
+> 

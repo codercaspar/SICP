@@ -1,0 +1,7 @@
+> (square-list (list 1 2 3 4))
+(16 9 4 1)
+> (square-list1 (list 1 2 3 4))
+((((() . 1) . 4) . 9) . 16)
+> (square-list2 (list 1 2 3 4))
+(1 4 9 16)
+> 

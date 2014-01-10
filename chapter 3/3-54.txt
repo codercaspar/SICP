@@ -1,0 +1,8 @@
+(stream-ref factorials 2)
+2
+
+(stream-ref factorials 4)
+24
+
+(stream-ref factorials 6)
+720

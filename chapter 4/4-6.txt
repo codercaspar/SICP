@@ -1,0 +1,17 @@
+;;; M-Eval input:
+(let ((a 1)
+	  (b 1))
+	(+ a b))
+
+;;; M-Eval value:
+2
+
+;;; M-Eval input:
+(let ((a 1)
+	  (b 3))
+	(+ a b))
+
+;;; M-Eval value:
+4
+
+;;; M-Eval input:

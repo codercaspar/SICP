@@ -1,0 +1,21 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+((Mary Mr-Moore) (Melissa Mr-Barnacle) (Gabrielle Mr-Hall) (Rosalind Mr-Parker) (Lorna Mr-Downing))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+((Mary Mr-Downing) (Melissa Mr-Barnacle) (Gabrielle Mr-Hall) (Rosalind Mr-Parker) (Lorna Mr-Moore))
+
+;;; Amb-Eval input:
+try-again
+
+;;; Amb-Eval value:
+((Mary Mr-Hall) (Melissa Mr-Barnacle) (Gabrielle Mr-Moore) (Rosalind Mr-Downing) (Lorna Mr-Parker))
+
+;;; Amb-Eval input:
+try-again
+
+;;; There are no more values of
+(yachts)

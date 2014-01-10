@@ -1,0 +1,7 @@
+> (deep-verse (list (list 1 2) (list 3 4)))
+((2 1) (4 3))
+> (deep-verse (list (list 1 2) 1 (list 3 4)))
+((2 1) 1 (4 3))
+> (deep-verse (list (list 1 2) (list 1) (list 3 4)))
+((2 1) (1) (4 3))
+> 

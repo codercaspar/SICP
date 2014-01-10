@@ -1,0 +1,66 @@
+;;; M-Eval input:
+(define (cons x y)
+(lambda (m) (m x y)))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(define (car z)
+(z (lambda (p q) p)))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(define (cdr z)
+(z (lambda (p q) q)))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+(car (quote (1 2 3)))
+
+;;; M-Eval value:
+1
+
+;;; M-Eval input:
+(car (quote ('a 'b 'c)))
+
+;;; M-Eval value:
+a
+
+如果直接执行(car (quote (a b c)))会引起异常，异常如下
+
+error: undefined;
+ cannot reference undefined identifier
+
+ (define (lookup-variable-value var env)
+	(if (eq? env the-empty-environment)
+		(begin (display var) (newline) (error "Unbound variable" var))
+		(let ((frame (first-frame env)))
+			(let ((val (lookup-variable-value-in-environment var frame)))
+				(if val
+					(if (eq? val '*unassigned*)
+						(error "Unassigned variable" var)
+						val)
+					(lookup-variable-value var (enclosing-environment env)))))))
+
+具体就是上面的lookup-variable-value
+
+分析一下如下
+
+(quote (a b c))变成了lambda，然后car一下
+就是返回了
+
+对其actual-value，第一步变成了
+(force-it (trunk y env))
+然后是(actual-value y env)
+(force-it (trunk a env))
+(actual-value a env)
+然后(force-it (my-eval a env))
+这步就出错了，会把a解释成一个变量，然后找不到变量，出错
+所以(car (quote ('a 'b 'c)))会正确
+到了最后一步是(force-it (my-eval 'a env))
+然后(my-eval 'a env)返回'a，正确

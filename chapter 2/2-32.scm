@@ -1,0 +1,5 @@
+﻿(define (sub-sets sets)
+	(cond ((null? (list (list))))
+		  ((not (pair? sets)) (list sets))
+		  (else (let ((rest (sub-sets (cdr sets))))
+					(append rest (map (lambda (x) (append (sub-sets (car sets)) x)) rest))))))

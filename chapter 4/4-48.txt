@@ -1,0 +1,12 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+(sentence (adjective-noun-phrase (article the) (adjective tired) (noun professor)) (verb-phrase (verb lectures) (prep-phrase (prep to) (adjective-noun-phrase (article a) (adjective gray) (noun cat)))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; There are no more values of
+(parse '(the tired professor lectures to a gray cat))
+
+
+this is eli bendersky's answer!

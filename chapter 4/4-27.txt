@@ -1,0 +1,51 @@
+;;; M-Eval input:
+(define count 0)
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+count
+
+;;; M-Eval value:
+0
+
+;;; M-Eval input:
+(define (id x)
+(set! count (+ count 1))
+x)
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+id
+
+;;; M-Eval value:
+(compound-procedure (x) ((set! count (+ count 1)) x) <procedure-env>)
+
+;;; M-Eval input:
+(define w (id (id 10)))
+
+;;; M-Eval value:
+ok
+
+;;; M-Eval input:
+count
+
+;;; M-Eval value:
+1
+
+;;; M-Eval input:
+w
+
+;;; M-Eval value:
+10
+
+;;; M-Eval input:
+count
+
+;;; M-Eval value:
+2
+
+;;; M-Eval input:

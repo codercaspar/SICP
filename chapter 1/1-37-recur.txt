@@ -1,0 +1,16 @@
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 4)
+0.6000000000000001
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 5)
+0.625
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 6)
+0.6153846153846154
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 7)
+0.6190476190476191
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 8)
+0.6176470588235294
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 9)
+0.6181818181818182
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 10)
+0.6179775280898876
+> (cont-frac (lambda (i) 1.0) (lambda (i) 1.0) 12)
+0.6180257510729613

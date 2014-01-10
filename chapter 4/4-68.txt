@@ -1,0 +1,21 @@
+﻿(assert! (rule (append-to-form () ?y ?y)))
+
+(assert! (rule (append-to-form (?u . ?v) ?y (?u . ?z))
+    (append-to-form ?v ?y ?z)))
+
+(assert! 
+    (rule (reverse () ())))
+
+(assert! 
+    (rule (reverse ?x ?y)
+       (and
+	       (append-to-form (?a) ?b ?x)
+		   (reverse ?b ?c)
+		   (append-to-form ?c (?a) ?y))))
+
+(reverse (1 2 3) ?x)
+;;; Query results:
+(reverse (1 2 3) (3 2 1))
+
+(reverse ?x (1 2 3))
+无限循环

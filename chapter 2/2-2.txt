@@ -1,0 +1,9 @@
+Welcome to DrRacket, version 5.2.1 [3m].
+Language: R5RS; memory limit: 128 MB.
+> (print-point (mid-point (make-segment (make-point 1 1) (make-point 3 3))))
+
+(2,2)
+> (print-point (mid-point (make-segment (make-point 1 2) (make-point 3 4))))
+
+(2,3)
+> 

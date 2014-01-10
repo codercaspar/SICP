@@ -1,0 +1,44 @@
+(assert! (son Adam Cain))
+(assert! (son Cain Enoch))
+(assert! (son Enoch Irad))
+(assert! (son Irad Mehujael))
+(assert! (son Mehujael Methushael))
+(assert! (son Methushael Lamech))
+(assert! (wife Lamech Ada))
+(assert! (son Ada Jabal))
+(assert! (son Ada Jubal))
+
+(assert! 
+    (rule (son ?x ?y)
+		(and (wife ?x ?r)
+			 (son ?r ?y))))
+
+(assert!
+    (rule (grandson ?x ?y)
+		(and (son ?x ?r)
+			 (son ?r ?y))))
+
+(assert!
+    (rule ((grandson) ?x ?y)
+	    (grandson ?x ?y)))
+			 
+(assert!
+    (rule ((great . ?ref) ?x ?y)
+		(and (son ?x ?r)
+		     (?ref ?r ?y))))
+			 
+((great grandson) ?g ?ggs)
+;;; Query results:
+((great grandson) Mehujael Jubal)
+((great grandson) Irad Lamech)
+((great grandson) Mehujael Jabal)
+((great grandson) Enoch Methushael)
+((great grandson) Cain Mehujael)
+((great grandson) Adam Irad)
+
+
+(?relationship Adam Irad)
+;;; Query results:
+((great great . son) Adam Irad)
+((great grandson) Adam Irad)
+((great . grandson) Adam Irad)

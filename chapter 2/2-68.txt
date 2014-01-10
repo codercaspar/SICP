@@ -1,0 +1,5 @@
+> (encode '(A D A B B C A) sample-tree)
+(0 1 1 0 0 1 0 1 0 1 1 1 0)
+> (decode (encode '(A D A B B C A) sample-tree) sample-tree)
+(A D A B B C A)
+> 

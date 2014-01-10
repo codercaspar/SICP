@@ -1,0 +1,51 @@
+(assert! (rule (same ?x ?x)))
+
+(assert!
+    (rule (lives-near ?person-1 ?person-2)
+        (and (address ?person-1 (?town . ?rest-1))
+             (address ?person-2 (?town . ?rest-2))
+             (not (same ?person-1 ?person-2)))))
+			 
+(lives-near ?person (Hacker Alyssa P))
+;;; Query results:
+(lives-near (Fect Cy D) (Hacker Alyssa P))
+
+(lives-near ?person-1 ?person-2)
+;;; Query results:
+(lives-near (Aull DeWitt) (Reasoner Louis))
+(lives-near (Aull DeWitt) (Bitdiddle Ben))
+(lives-near (Reasoner Louis) (Aull DeWitt))
+(lives-near (Reasoner Louis) (Bitdiddle Ben))
+(lives-near (Hacker Alyssa P) (Fect Cy D))
+(lives-near (Fect Cy D) (Hacker Alyssa P))
+(lives-near (Bitdiddle Ben) (Aull DeWitt))
+(lives-near (Bitdiddle Ben) (Reasoner Louis))
+
+(assert!
+    (rule (new-lives-near ?person-1 ?person-2)
+        (and (address ?person-1 (?town . ?rest-1))
+             (address ?person-2 (?town . ?rest-2))
+             (not (same ?person-1 ?person-2))
+			 (lisp-value string>? ?person-1 ?person-2))))
+			 
+			 
+不知道为什么安装了racket support sicp packet后直接运行logic eval后，涉及到index优化的部分有问题
+本来有的却查不到，但直接在mit-scheme环境却是正常
+所以我把index优化去掉了，这并不影响结果，只是优化手段而已
+
+安装racket support sicp packet的参考
+www.neilvandyke.org/racket-sicp/
+
+安装后选择SICP语言
+
+然后关于这道题最后一问，因为是对称的，所以所有结果都出现两次，并且对称
+有点类似会出现死锁的那种情况
+
+1 A-B
+2 B-A
+1和2同时运行时就可能出现问题，1获取A同时2获取了B，然后两人就永远互相等下去
+这个问题也类似
+解决方法也差不多，
+上述问题的解决方法就是给A,B排序，大家都用一个顺序获取执行，就没问题了
+
+这个也是，将两个人名字比较一下就好了

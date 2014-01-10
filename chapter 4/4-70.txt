@@ -1,0 +1,15 @@
+必须用let，否则就会出问题
+什么问题呢？
+因为cons-stream是delay执行呢，写成这样的话
+(define (add-assertion! assertion)
+    (store-assertion-in-index assertion)
+    (set! THE-ASSERTIONS
+        (cons-stream assertion THE-ASSERTIONS))
+        'ok)
+		
+THE-ASSERTIONS就变成了(cons-stream assertion THE-ASSERTIONS)
+好像没什么问题，但问题已经产生了
+stream-car 还好，
+(stream-cdr THE-ASSERTIONS)就变成了类似于
+(define ones (cons-stream 1 ones))这种无限stream了
+用let的话先给原值缓存一下，就ok了

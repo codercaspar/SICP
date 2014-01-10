@@ -1,0 +1,6 @@
+﻿> (my-equal? '(a b c) '(a b c))
+#t
+> (my-equal? '(a b c) '(a c c))
+#f
+> 
+                        

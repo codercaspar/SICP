@@ -1,0 +1,26 @@
+;;; Starting a new problem: 
+;;; Amb-Eval value:
+(sentence 
+	(noun-phrase 
+		(simple-noun-phrase 
+			(article the) 
+			(noun student)) 
+		(prep-phrase 
+			(prep with) 
+			(simple-noun-phrase 
+				(article the) 
+				(noun cat)))) 
+	(verb-phrase 
+		(verb 
+			sleeps) 
+		(prep-phrase 
+			(prep in) 
+			(simple-noun-phrase 
+				(article the) 
+				(noun class)))))
+
+;;; Amb-Eval input:
+try-again
+
+;;; There are no more values of
+(parse '(the student with the cat sleeps in the class))

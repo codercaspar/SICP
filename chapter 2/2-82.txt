@@ -1,0 +1,5 @@
+﻿Consider the example in Figure 2.26 in the book. Suppose we have a call with these types: (kite quadrilateral). Since kite can be coerced into quadrilateral, everything works as expected.
+
+But now suppose we have a call with: (triangle kite quadrilateral). Going over each of these types and trying to coerce them to each other won’t work. But they can all be coerced into polygon. This demonstrates the flaw of this method. What we should be really going is finding some common “ancestor” type for all the types we work on.
+
+

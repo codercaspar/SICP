@@ -1,0 +1,38 @@
+Welcome to DrRacket, version 5.2.1 [3m].
+Language: R5RS; memory limit: 128 MB.
+> (define a (make-center-percent 5 0.02))
+> (define b (make-center-percent 10 0.03))
+> (define c (mul-interval a b))
+> (rate c)
+0.05
+> c
+(47.5 . 52.5)
+> (par1 a b)
+(3.079967977228251 . 3.591442803771571)
+> (par2 a b)
+(3.255479452054795 . 3.4110389610389613)
+> (div-interval a a)
+(0.9603841536614647 . 1.0404161664665865)
+> (div-interval a b)
+(0.4754278850965869 . 0.5254729256330697)
+> (define aa (div-interval a a))
+> (define ab (div-interval a b))
+> (center aa)
+1.0004001600640255
+> (center ab)
+0.5004504053648283
+> (rate aa)
+0.03999999999999995
+> (rate ab)
+0.0499999999999999
+> (define apa1 (par1 a a))
+> apa1
+(2.35094037615046 . 2.651060424169667)
+> (rate apa1)
+0.05999999999999987
+>  (define apa2 (par2 a a))
+> apa2
+(2.45 . 2.55)
+> (rate apa2)
+0.019999999999999928
+> 

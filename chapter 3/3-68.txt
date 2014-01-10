@@ -1,0 +1,6 @@
+会无限递归
+因为interleave是个函数，所以先求出第一个流(stream-map (lambda (x) (list (stream-car s) x)) t)
+这个没问题，可接下来求第二个(pairs (stream-cdr s) (stream-cdr t))
+然后就无限循环了
+之前的就没问题
+所以说用流的话，不能用let或者函数实现自我定义，必须用define

@@ -1,0 +1,6 @@
+> (define a (my-cons 1 2))
+> (my-car a)
+1
+> (my-cdr a)
+2
+> 

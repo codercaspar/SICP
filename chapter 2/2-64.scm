@@ -1,0 +1,23 @@
+(define (list->tree elements)
+	(car (partial-tree elements (length elements))))
+	
+(define (partial-tree elements n)
+	(if (= n 0)
+		(cons (list) elements)
+		(let ((left-size (quotient (- n 1) 2)))
+			 (let ((left-result (partial-tree elements left-size)))
+				  (let ((left-tree (car left-result))
+						(non-left-eles (cdr left-result))
+						(right-size (- n (+ left-size 1))))
+					(let ((this-entry (car non-left-eles))
+						  (right-result (partial-tree (cdr non-left-eles) right-size)))
+						(let ((right-tree (car right-result))
+							  (remaining-eles (cdr right-result)))
+							(cons (make-tree this-entry left-tree right-tree) remaining-eles))))))))
+							
+							
+(define (entry tree)        (car tree))
+(define (left-branch tree)  (cadr tree))
+(define (right-branch tree) (caddr tree))
+(define (make-tree entry left right)
+	(list entry left right))
